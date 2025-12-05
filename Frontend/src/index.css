@@ -1,0 +1,43 @@
+/* Default accent (fallback if no color applied) */
+
+
+/* Theme */
+body.light {
+  background: #f8f9fa;
+  color: #212529;
+}
+body.dark {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+/* Accent Colors */
+body.color-blue   { --accent: #3b82f6; }
+body.color-purple { --accent: #8b5cf6; }
+body.color-green  { --accent: #22c55e; }
+body.color-yellow { --accent: #e0d847; }
+body.color-red    { --accent: #ef4444; }
+body.color-orange { --accent: #f97316; }
+
+/* Use accent everywhere */
+.btn-primary,
+.bg-primary {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+.text-primary {
+  color: var(--accent) !important;
+}
+
+/* Fonts */
+body.font-default { font-family: "Inter", sans-serif; }
+body.font-serif { font-family: "Georgia", serif; }
+body.font-sans-serif { font-family: "Arial", sans-serif; }
+
+/* Accessibility */
+body.high-contrast {
+  filter: contrast(1.5);
+}
+body.large-text {
+  font-size: 1.2rem;
+}
