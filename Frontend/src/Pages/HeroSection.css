@@ -1,0 +1,238 @@
+/* Brain Pulse Animation */
+@keyframes brainPulse {
+  0%,
+  100% {
+    transform: scale(1) translateY(0px);
+  }
+  50% {
+    transform: scale(1.12) translateY(-10px);
+  }
+}
+
+.pulsing-brain {
+  animation: brainPulse 4s ease-in-out infinite;
+  transition: all 0.6s ease;
+  transform-origin: center;
+}
+
+/* DNA Background */
+.dna-svg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 200%;
+  height: 300px;
+  transform: translateY(-50%);
+  animation: moveDNA 15s linear infinite;
+  opacity: 0.5;
+  filter: drop-shadow(0 0 6px cyan);
+  z-index: 0;
+}
+
+/* Reverse DNA movement */
+@keyframes moveDNA {
+  0% {
+    transform: translateX(-50%) translateY(-50%);
+  }
+  100% {
+    transform: translateX(0) translateY(-50%);
+  }
+}
+
+/* Brain Container */
+.brain-container {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+/* Floating Brain (adds soft up-down motion) */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animated-brain {
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.8s ease, filter 0.3s ease;
+}
+/* ===============================
+   Brain Smooth Pulse (every second)
+   =============================== */
+@keyframes brainPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.pulsing-brain {
+  animation: brainPulse 1s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* ===============================
+   Brain Float Animation
+   =============================== */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.animated-brain {
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.8s ease, filter 0.4s ease;
+  filter: drop-shadow(0 0 25px rgba(0, 255, 255, 0.5));
+}
+
+.large-brain {
+  width: 550px;
+  max-width: 100%;
+  transform-origin: center;
+}
+
+.large-brain:hover {
+  filter: drop-shadow(0 0 40px rgba(0, 255, 255, 0.8));
+  transform: scale(1.05);
+}
+
+/* ===============================
+   Brain Container
+   =============================== */
+.brain-container {
+  position: relative;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+/* ===============================
+   Orbiting Particles
+   =============================== */
+.particle-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 420px;
+  height: 420px;
+  transform: translate(-50%, -50%) rotateX(65deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle-orbit span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(0, 255, 255, 0.9);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.7);
+  transform-origin: 0 -210px;
+  animation: orbitMove 10s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes orbitMove {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Random variation */
+.particle-orbit span:nth-child(3n) {
+  width: 3px;
+  height: 3px;
+  opacity: 0.6;
+}
+.particle-orbit span:nth-child(2n) {
+  transform-origin: 0 -190px;
+  animation-duration: 8s;
+  animation-delay: -3s;
+}
+.particle-orbit span:nth-child(5n) {
+  transform-origin: 0 -230px;
+  animation-duration: 12s;
+  animation-delay: -6s;
+}
+
+/* ===============================
+   Ambient Floating Particles
+   =============================== */
+.ambient-particles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambient-particles span {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(0, 255, 255, 0.6);
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0, 255, 255, 0.8);
+  animation: floatParticle 6s ease-in-out infinite;
+}
+
+@keyframes floatParticle {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.7; }
+  50% { transform: translateY(-15px) scale(1.2); opacity: 1; }
+}
+
+/* ===============================
+   Glowing Base
+   =============================== */
+.glow-base {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.8), transparent 70%);
+  border-radius: 50%;
+  filter: blur(20px);
+  animation: glowPulse 3s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.9; transform: translateX(-50%) scale(1); }
+  50% { opacity: 0.6; transform: translateX(-50%) scale(1.1); }
+}
+
+/* ===============================
+   Responsive Adjustments
+   =============================== */
+@media (min-width: 992px) {
+  .brain-container {
+    position: absolute;
+    top: 40px;
+    right: -80px;
+  }
+}
+
+@media (max-width: 991px) {
+  .brain-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+}
